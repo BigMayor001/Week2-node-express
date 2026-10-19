@@ -1,3 +1,5 @@
+require("dotenv") .config()
+
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -12,9 +14,9 @@ next();
 
 app.get('/', (req, res) => { 
  res.send('My Week2 API!'); 
-});
+}); 
 
-app.post('/user', (req, res) => {
+app.post('/echo', (req, res) => {
     console.log({name: 'Mayowa', email: 'Glossy@gmail.com'});
     res.json('Hello, Mayowa');
 });

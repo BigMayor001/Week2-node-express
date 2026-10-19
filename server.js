@@ -32,15 +32,15 @@ app.use((req, res) => {
   res.status(400).send('400 Not Found :(');
 });
 
-app.use((req, res, next) => { //middleware to handle errors
- console.log(`${req.method} ${req.url} - ${new Date()}`); //log the error message
+app.use((req, res, next) => { 
+ console.log(`${req.method} ${req.url} - ${new Date()}`); 
 next();
 });
 
-app.get('/logged', (req, res) => { //define a route for the /add URL
- res.send('This was logged'); //send a response to the client
+app.get('/logged', (req, res) => { 
+ res.send('This was logged'); //
 });
 
-app.listen(PORT, () => { //start the server and listen on the specified port
-console.log(`Server is running on http://localhost:${PORT}`); //log a message to the console when the server is running
+app.listen(PORT, () => { 
+console.log(`Server is running on http://localhost:${PORT}`); 
 });

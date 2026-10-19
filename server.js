@@ -1,9 +1,10 @@
-require("dotenv") .config()
+require("dotenv") .config();
 
 const express = require('express');
-const app = express();
 const path = require('path');
-const port = 3000;
+
+const app = express();
+const PORT = process.env.PORT;
 
 app.use(express.json());
 
@@ -40,6 +41,6 @@ app.get('/logged', (req, res) => { //define a route for the /add URL
  res.send('This was logged'); //send a response to the client
 });
 
-app.listen(port, () => { //start the server and listen on the specified port
-console.log(`Server is running on http://localhost:${port}`); //log a message to the console when the server is running
+app.listen(PORT, () => { //start the server and listen on the specified port
+console.log(`Server is running on http://localhost:${PORT}`); //log a message to the console when the server is running
 });
